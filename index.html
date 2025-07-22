@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
      crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-9341704667724928">
     <!-- Google tag (gtag.js) -->
@@ -15,518 +15,614 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Screamals online games for free! Enjoy the best browser games with our community.">
-    <meta name="keywords" content="screamals, screamals online games, free online games, browser games">
-    <link rel="canonical" href="https://screamals.com">
-    <title>Screamals - Free Online Games</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Play Screamals Online - A fun 3D hypercasual runner game! Change shapes to avoid obstacles, collect musical notes, and defeat bosses.">
+    <meta name="keywords" content="Screamals game, play Screamals online, hypercasual runner game, free online games, skill-based games, browser games, music-based gameplay, multiplayer games">
+    <link rel="canonical" href="https://screamals.com/">
+    <title>Play Screamals Online: Fun Hypercasual Runner Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23a855f7%22/><text x=%2250%22 y=%2267%22 font-family=%22Arial%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23ffffff%22>S</text></svg>">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        'apple-bg': '#f5f5f7',
+                        'apple-text': '#1d1d1f',
                         'apple-blue': '#0071e3',
-                        'apple-gray': '#f5f5f7',
-                        'apple-dark': '#1d1d1f',
-                        'apple-light': '#fbfbfd'
+                        'apple-gray': '#86868b',
+                        'apple-light-gray': '#d2d2d7',
+                        'game-purple': '#7e5bef',
+                        'game-pink': '#ec4899',
+                        'game-gradient-start': '#8a2be2',
+                        'game-gradient-end': '#4a00e0'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                        'heading': ['Montserrat', 'sans-serif']
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #fbfbfd;
+            background-color: #f5f5f7;
             color: #1d1d1f;
-            line-height: 1.6;
+            transition: all 0.3s ease;
         }
-        
-        .apple-gradient {
-            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
-        }
-        
         .game-container {
             position: relative;
-            overflow: hidden;
-            border-radius: 18px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            height: 600px;
-        }
-        
-        .game-container iframe {
             width: 100%;
-            height: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #8a2be2 0%, #4a00e0 100%);
+            border: 8px solid white;
+        }
+        .game-iframe {
+            width: 100%;
+            height: 500px;
             border: none;
         }
-        
-        .comment-bubble {
-            position: relative;
-            border-radius: 18px;
-            padding: 16px;
-            margin-bottom: 16px;
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        .reply-bubble {
-            background-color: #f9f9fb;
-            margin-left: 30px;
-            margin-top: 12px;
-        }
-        
         @media (max-width: 768px) {
-            .game-container {
+            .game-iframe {
                 height: 400px;
             }
-            
-            .forum-grid {
-                grid-template-columns: 1fr;
-            }
         }
-        
         @media (max-width: 480px) {
-            .game-container {
+            .game-iframe {
                 height: 300px;
             }
         }
-        
-        .badge {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 500;
+        .forum-message {
+            border-left: 3px solid #0071e3;
+            transition: all 0.2s ease;
         }
-        
-        .logo-text {
-            font-weight: 700;
+        .forum-message:hover {
+            background-color: rgba(0,113,227,0.03);
+        }
+        .reply-form {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .reply-form.active {
+            max-height: 200px;
+        }
+        .logo {
+            font-weight: 800;
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+            background: linear-gradient(45deg, #8a2be2, #4a00e0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #7e5bef, #ec4899);
+            transition: all 0.2s ease;
+            border: none;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(126, 91, 239, 0.3);
+        }
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            background: rgba(126, 91, 239, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #7e5bef;
+            margin-bottom: 20px;
+        }
+        .badge {
+            background: linear-gradient(45deg, #8a2be2, #4a00e0);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        .message-content {
+            word-break: break-word;
+        }
+        .censored {
+            background-color: #f0f0f0;
+            color: #d2d2d7;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .game-instruction {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .section-title {
+            background: linear-gradient(45deg, #8a2be2, #4a00e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-bottom: 5px;
+            border-bottom: 3px solid #e0e0e0;
+            display: inline-block;
+        }
+        .gaming-font {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .game-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
     </style>
 </head>
-<body class="apple-gradient min-h-screen">
+<body class="font-sans">
     <!-- Header Section -->
-    <header class="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="text-3xl">🎮</div>
-                <h1 class="text-2xl font-bold"><span class="logo-text">Screamals</span></h1>
+            <div class="flex items-center">
+                <h1 class="text-3xl font-bold logo">SCREAMALS</h1>
+                <span class="ml-2 px-3 py-1 text-xs font-semibold text-white rounded-full badge">FREE TO PLAY</span>
             </div>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#" class="text-gray-600 hover:text-apple-blue transition">Home</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-apple-blue transition">Games</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-apple-blue transition">Forum</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-apple-blue transition">About</a></li>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#" class="text-apple-text hover:text-game-purple font-medium">Home</a></li>
+                    <li><a href="#" class="text-apple-gray hover:text-game-purple font-medium">Gameplay</a></li>
+                    <li><a href="#" class="text-apple-gray hover:text-game-purple font-medium">Leaderboard</a></li>
+                    <li><a href="#" class="text-apple-gray hover:text-game-purple font-medium">Tips</a></li>
+                    <li><a href="#forum" class="text-apple-gray hover:text-game-purple font-medium">Community</a></li>
                 </ul>
             </nav>
+            <button class="md:hidden text-apple-text">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8 max-w-6xl">
-        <!-- Game Title Section -->
-        <section class="text-center mb-16">
-            <div class="inline-block bg-gradient-to-r from-[#FF9A8B] to-[#FF6A88] p-1 rounded-full mb-6">
-                <div class="bg-white rounded-full px-6 py-2">
-                    <span class="badge bg-gradient-to-r from-[#FF9A8B] to-[#FF6A88] text-white">NEW</span>
-                </div>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-indigo-50 to-purple-50 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 gaming-font">PLAY SCREAMALS ONLINE</h1>
+            <p class="text-2xl text-apple-gray max-w-3xl mx-auto mb-8">
+                The Ultimate Hypercasual Runner Experience!
+            </p>
+            <div class="flex justify-center space-x-4 mb-12">
+                <button class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg">
+                    <i class="fas fa-play mr-2"></i>Play Now
+                </button>
+                <button class="bg-white text-game-purple border-2 border-game-purple px-8 py-4 rounded-full font-semibold text-lg hover:bg-game-purple hover:text-white transition">
+                    <i class="fas fa-trophy mr-2"></i>Leaderboard
+                </button>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Screamals Online Games</h1>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Experience the ultimate browser gaming adventure with Screamals - fun, free, and accessible anytime!</p>
-        </section>
+        </div>
+    </section>
 
-        <!-- Game Introduction -->
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Game Intro -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-center">About Screamals Game</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <p class="mb-4 text-gray-700">Screamals is an exciting online adventure game where you navigate through challenging obstacles, collect rewards, and compete with players worldwide. With simple controls and addictive gameplay, it's perfect for quick gaming sessions or extended play.</p>
-                    <p class="mb-4 text-gray-700">Our game features vibrant graphics, smooth performance, and regular updates with new levels and challenges. Best of all - it's completely free to play with no downloads required!</p>
-                    <div class="mt-6">
-                        <h3 class="text-xl font-semibold mb-3">Game Features:</h3>
-                        <ul class="grid grid-cols-2 gap-3">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Easy controls</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Global leaderboard</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Daily challenges</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Character customization</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Regular updates</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Completely free</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="flex justify-center">
-                    <div class="relative w-full max-w-md">
-                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl transform rotate-3"></div>
-                        <div class="relative bg-white rounded-xl overflow-hidden shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000" alt="Screamals Game Screenshot" class="w-full h-64 object-cover">
-                            <div class="p-4">
-                                <h3 class="font-bold text-lg mb-2">Game Preview</h3>
-                                <p class="text-gray-600">Experience vibrant worlds and exciting challenges</p>
-                            </div>
+            <div class="bg-white rounded-2xl p-8 mb-12 shadow-lg">
+                <h2 class="text-3xl font-bold mb-6 text-center section-title">WHAT IS SCREAMALS?</h2>
+                <p class="text-xl text-center text-apple-gray mb-10 max-w-4xl mx-auto">
+                    Play Screamals Online, a thrilling 3D runner game! Change shapes to avoid obstacles, collect musical notes, 
+                    and defeat epic bosses in this skill-based challenge! Perfect for quick gaming sessions or extended play.
+                </p>
+                
+                <!-- Game Features -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                    <div class="game-card flex flex-col items-center text-center p-6 rounded-2xl">
+                        <div class="feature-icon">
+                            <i class="fas fa-music"></i>
                         </div>
+                        <h3 class="text-2xl font-bold mb-2 gaming-font">Rhythm-Based</h3>
+                        <p class="text-apple-gray">Collect notes to the beat and unlock special powers</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Game Iframe -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-center">Play Screamals Now</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="game-container">
-                    <!-- Game iframe will be loaded here -->
-                    <iframe src="https://dinosaur-game.io/screamals" title="Screamals Online Game" allow="autoplay; fullscreen"></iframe>
-                </div>
-                <div class="mt-4 flex justify-between items-center">
-                    <div class="flex space-x-2">
-                        <span class="badge bg-blue-100 text-apple-blue">Online</span>
-                        <span class="badge bg-green-100 text-green-600">Screamals</span>
+                    <div class="game-card flex flex-col items-center text-center p-6 rounded-2xl">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 gaming-font">Multiplayer</h3>
+                        <p class="text-apple-gray">Compete with friends in real-time challenges</p>
                     </div>
-                    <div>
-                        <button class="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-600 transition">Fullscreen</button>
+                    <div class="game-card flex flex-col items-center text-center p-6 rounded-2xl">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 gaming-font">Skill Mastery</h3>
+                        <p class="text-apple-gray">Master shape-changing to overcome obstacles</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Community Forum -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-center">Community Forum</h2>
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden max-w-4xl mx-auto">
-                <div class="p-6 border-b">
-                    <h3 class="text-xl font-semibold mb-4">Share your thoughts</h3>
-                    <div class="flex space-x-4">
-                        <div class="flex-shrink-0">
-                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
-                        </div>
-                        <div class="flex-grow">
-                            <textarea id="comment-input" placeholder="Write your comment here..." class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-apple-blue focus:border-transparent" rows="3"></textarea>
-                            <div class="mt-3 flex justify-between">
-                                <div>
-                                    <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium">Attach</button>
-                                </div>
-                                <div>
-                                    <button id="submit-comment" class="bg-apple-blue text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition">Post Comment</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            
+            <!-- Game Container -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-center section-title">PLAY SCREAMALS NOW</h2>
+                
+                <div class="game-container mb-6">
+                    <iframe src="https://dinosaur-game.io/screamals" class="game-iframe" allow="fullscreen" title="Screamals Game"></iframe>
                 </div>
                 
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-4">Recent Comments</h3>
-                    
-                    <div id="comments-container">
-                        <!-- Comments will be dynamically added here -->
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button onclick="document.querySelector('.game-iframe').requestFullscreen()" class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg">
+                        <i class="fas fa-expand mr-2"></i>Play Fullscreen
+                    </button>
+                    <button class="bg-white text-game-purple border-2 border-game-purple px-8 py-4 rounded-full font-semibold text-lg hover:bg-game-purple hover:text-white transition">
+                        <i class="fas fa-share-alt mr-2"></i>Share Game
+                    </button>
+                </div>
+                
+                <!-- Game Instructions -->
+                <div class="max-w-3xl mx-auto bg-white rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center text-game-purple">HOW TO PLAY</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="game-instruction">
+                            <div class="text-center text-3xl text-game-purple mb-2">1</div>
+                            <h4 class="font-bold text-center mb-2">Tap to Change Shape</h4>
+                            <p class="text-sm text-center">Match your shape to pass through obstacles</p>
+                        </div>
+                        <div class="game-instruction">
+                            <div class="text-center text-3xl text-game-purple mb-2">2</div>
+                            <h4 class="font-bold text-center mb-2">Collect Music Notes</h4>
+                            <p class="text-sm text-center">Gather notes to boost your score and abilities</p>
+                        </div>
+                        <div class="game-instruction">
+                            <div class="text-center text-3xl text-game-purple mb-2">3</div>
+                            <h4 class="font-bold text-center mb-2">Defeat Bosses</h4>
+                            <p class="text-sm text-center">Use special moves to overcome level bosses</p>
+                        </div>
                     </div>
-                    
-                    <div id="load-more-container" class="text-center mt-6">
-                        <button id="load-more" class="text-apple-blue font-medium">Load More Comments</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forum Section -->
+        <section id="forum" class="bg-white rounded-2xl p-6 shadow-lg mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-center section-title">PLAYER COMMUNITY</h2>
+            <p class="text-center text-apple-gray mb-8 max-w-2xl mx-auto">Share your tips, ask questions, and connect with other Screamals players. No registration required!</p>
+            
+            <!-- Forum Form -->
+            <div class="bg-apple-bg rounded-2xl p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-game-purple">POST A MESSAGE</h3>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Name (optional)</label>
+                            <input type="text" id="userName" class="w-full p-3 border border-apple-light-gray rounded-lg focus:ring-2 focus:ring-game-purple focus:outline-none" placeholder="Anonymous Player">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Category</label>
+                            <select class="w-full p-3 border border-apple-light-gray rounded-lg focus:ring-2 focus:ring-game-purple focus:outline-none">
+                                <option>Game Tips</option>
+                                <option>High Scores</option>
+                                <option>Boss Strategies</option>
+                                <option>General Discussion</option>
+                            </select>
+                        </div>
                     </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Your Message*</label>
+                        <textarea id="messageContent" rows="4" class="w-full p-3 border border-apple-light-gray rounded-lg focus:ring-2 focus:ring-game-purple focus:outline-none" placeholder="Share your thoughts about Screamals..." required></textarea>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <p class="text-sm text-apple-gray">All messages are moderated. Abusive content will be removed.</p>
+                        <button id="postMessage" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold">Post Message</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Forum Messages -->
+            <div id="messagesContainer">
+                <h3 class="text-xl font-bold mb-4 text-game-purple">LATEST MESSAGES</h3>
+                <div id="messagesList" class="space-y-6">
+                    <!-- Messages will be dynamically inserted here -->
+                </div>
+                
+                <!-- View More Button -->
+                <div id="viewMoreContainer" class="mt-8 text-center">
+                    <button id="viewMoreBtn" class="text-game-purple font-semibold hover:underline px-6 py-3 rounded-lg border border-game-purple">Load More Messages</button>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-apple-dark text-white py-12">
-        <div class="container mx-auto px-4 max-w-6xl">
+    <footer class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-12">
+        <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4"><span class="logo-text">Screamals</span></h3>
-                    <p class="text-gray-400">Free online games for everyone. Play, compete, and have fun!</p>
+                    <h2 class="text-2xl font-bold mb-4 logo">SCREAMALS</h2>
+                    <p class="text-indigo-200">The ultimate hypercasual runner experience. Free to play, forever!</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-white hover:text-indigo-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-indigo-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-indigo-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-indigo-300"><i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">All Games</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Leaderboards</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Support</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white">How to Play</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white">Game Tips</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white">Leaderboard</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white">Character Guide</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-indigo-200 hover:text-white">Copyright Info</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Connect</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-discord"></i></a>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="text-indigo-200 mb-2">Get updates on new levels and features!</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button class="bg-game-purple px-4 py-2 rounded-r-lg font-semibold">Join</button>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
-                <p>&copy; 2023 Screamals.com. All rights reserved. Play responsibly.</p>
+            <div class="mt-12 pt-8 border-t border-indigo-800 text-center text-indigo-300 text-sm">
+                &copy; 2023 Screamals.com. All rights reserved. This is a free-to-play browser game. No downloads required. 
+                Screamals is a trademark of our gaming studio. Google AdSense approved.
             </div>
         </div>
     </footer>
 
     <script>
         // Bad words filter
-        const badWords = ['idiot', 'stupid', 'hate', 'moron', 'dumb', 'loser', 'shut up', 'shutup', 'suck', 'fool'];
+        const badWords = ['stupid', 'idiot', 'hate', 'shit', 'fuck', 'damn', 'ass', 'bitch', 'hell'];
         
-        // Comments data structure
-        let comments = [
+        // Forum messages data
+        let messages = [
             {
                 id: 1,
-                name: "GamerPro23",
-                content: "Just reached level 50! This game is so addictive, love the new challenges they added last week.",
-                time: "2 hours ago",
+                userName: 'GameLover42',
+                content: "Just set a new high score of 12,345! The boss battle in level 5 is tricky but so satisfying to beat.",
+                timestamp: '2 hours ago',
+                likes: 24,
+                category: 'High Scores',
                 replies: [
-                    {
-                        id: 11,
-                        name: "NoobSlayer",
-                        content: "Congrats! I'm stuck at level 42, any tips?",
-                        time: "1 hour ago"
-                    },
-                    {
-                        id: 12,
-                        name: "GamerPro23",
-                        content: "Focus on collecting the blue gems, they give you extra lives which help on the harder levels.",
-                        time: "45 minutes ago"
-                    }
+                    { id: 101, userName: 'ProRunner', content: "Nice score! Wait until you get to level 7, it's insane!", timestamp: '1 hour ago', likes: 8 }
                 ]
             },
             {
                 id: 2,
-                name: "PixelQueen",
-                content: "The character customization options are amazing! Spent an hour just designing my Screamal.",
-                time: "5 hours ago",
+                userName: 'CasualGamer',
+                content: "Love how the music syncs with the gameplay. Any tips for collecting more musical notes?",
+                timestamp: '5 hours ago',
+                likes: 17,
+                category: 'Game Tips',
                 replies: [
-                    {
-                        id: 21,
-                        name: "GameLover",
-                        content: "Same here! I wish they had more hairstyle options though.",
-                        time: "4 hours ago"
-                    }
+                    { id: 102, userName: 'RhythmMaster', content: "Try to time your shape changes to the beat. The notes appear in rhythm with the music!", timestamp: '4 hours ago', likes: 12 },
+                    { id: 103, userName: 'SoundNinja', content: "Also, don't forget to use the slide move for those low notes.", timestamp: '3 hours ago', likes: 5 }
                 ]
             },
             {
                 id: 3,
-                name: "RetroGamer",
-                content: "Does anyone else think the dinosaur level is too difficult? I've been stuck there for days!",
-                time: "1 day ago",
+                userName: 'ShapeShifter',
+                content: "The triangle form is OP for boss battles! Just defeated the level 3 boss in record time.",
+                timestamp: '1 day ago',
+                likes: 42,
+                category: 'Boss Strategies',
                 replies: []
             },
             {
                 id: 4,
-                name: "SpeedRunner",
-                content: "New world record on the desert level - 2:45! Check my channel for the gameplay.",
-                time: "1 day ago",
-                replies: [
-                    {
-                        id: 41,
-                        name: "CasualPlayer",
-                        content: "That's insane! I can't get below 4 minutes.",
-                        time: "20 hours ago"
-                    }
-                ]
-            },
-            {
-                id: 5,
-                name: "StrategyMaster",
-                content: "Here's a tip for new players: always save your power-ups for boss levels. They make a huge difference!",
-                time: "2 days ago",
+                userName: 'Anonymous',
+                content: "This game is so addictive! Been playing during my coffee breaks all week.",
+                timestamp: '1 day ago',
+                likes: 31,
+                category: 'General Discussion',
                 replies: []
             }
         ];
         
         // DOM Elements
-        const commentsContainer = document.getElementById('comments-container');
-        const commentInput = document.getElementById('comment-input');
-        const submitBtn = document.getElementById('submit-comment');
-        const loadMoreBtn = document.getElementById('load-more');
+        const messagesList = document.getElementById('messagesList');
+        const postMessageBtn = document.getElementById('postMessage');
+        const viewMoreContainer = document.getElementById('viewMoreContainer');
+        const viewMoreBtn = document.getElementById('viewMoreBtn');
         
-        // Display comments
-        function renderComments() {
-            commentsContainer.innerHTML = '';
-            
-            const maxComments = 5; // Show only 5 comments initially
-            const commentsToShow = comments.slice(0, maxComments);
-            
-            commentsToShow.forEach(comment => {
-                const commentElement = createCommentElement(comment);
-                commentsContainer.appendChild(commentElement);
-            });
-            
-            // Show "Load More" if there are more comments
-            loadMoreBtn.style.display = comments.length > maxComments ? 'block' : 'none';
-        }
-        
-        // Create comment element
-        function createCommentElement(comment) {
-            const commentElement = document.createElement('div');
-            commentElement.className = 'comment-bubble';
-            
-            commentElement.innerHTML = `
-                <div class="flex justify-between mb-2">
-                    <div class="font-semibold">${comment.name}</div>
-                    <div class="text-gray-500 text-sm">${comment.time}</div>
-                </div>
-                <div class="mb-3">${comment.content}</div>
-                <div class="flex justify-between items-center">
-                    <button class="reply-btn text-apple-blue text-sm font-medium" data-id="${comment.id}">
-                        <i class="fas fa-reply mr-1"></i> Reply
-                    </button>
-                    <div class="text-gray-500 text-sm">
-                        ${comment.replies.length} ${comment.replies.length === 1 ? 'reply' : 'replies'}
-                    </div>
-                </div>
-                <div class="replies-container mt-2" id="replies-${comment.id}">
-                    ${renderReplies(comment.replies)}
-                </div>
-                <div class="reply-form hidden mt-3" id="reply-form-${comment.id}">
-                    <div class="flex space-x-3">
-                        <div class="flex-shrink-0">
-                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-10 h-10"></div>
-                        </div>
-                        <div class="flex-grow">
-                            <textarea placeholder="Write your reply..." class="w-full p-3 border rounded-lg text-sm" rows="2"></textarea>
-                            <div class="mt-2 flex justify-end space-x-2">
-                                <button class="cancel-reply text-gray-600 text-sm font-medium" data-id="${comment.id}">Cancel</button>
-                                <button class="submit-reply bg-apple-blue text-white px-4 py-1 rounded-lg text-sm font-medium" data-id="${comment.id}">Post</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            return commentElement;
-        }
-        
-        // Render replies
-        function renderReplies(replies) {
-            if (replies.length === 0) return '';
-            
-            return replies.map(reply => `
-                <div class="reply-bubble">
-                    <div class="flex justify-between mb-1">
-                        <div class="font-semibold">${reply.name}</div>
-                        <div class="text-gray-500 text-xs">${reply.time}</div>
-                    </div>
-                    <div>${reply.content}</div>
-                </div>
-            `).join('');
-        }
-        
-        // Filter bad words
-        function filterBadWords(text) {
-            let filteredText = text;
+        // Function to censor bad words
+        function censorText(text) {
+            let censoredText = text;
             badWords.forEach(word => {
                 const regex = new RegExp(word, 'gi');
-                filteredText = filteredText.replace(regex, '***');
+                censoredText = censoredText.replace(regex, `<span class="censored">[censored]</span>`);
             });
-            return filteredText;
+            return censoredText;
         }
         
-        // Event listeners
-        submitBtn.addEventListener('click', () => {
-            const content = commentInput.value.trim();
+        // Function to render messages
+        function renderMessages(limit = 3) {
+            messagesList.innerHTML = '';
+            
+            // Display messages up to the limit
+            const messagesToShow = messages.slice(0, limit);
+            
+            messagesToShow.forEach(message => {
+                // Create message element
+                const messageEl = document.createElement('div');
+                messageEl.className = 'forum-message p-6 bg-white rounded-xl shadow-sm';
+                messageEl.innerHTML = `
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <span class="font-semibold">${message.userName || 'Anonymous Player'}</span>
+                            <span class="text-apple-gray text-sm ml-2">${message.timestamp}</span>
+                            <span class="ml-2 px-2 py-1 text-xs font-semibold text-white rounded-full bg-game-purple">${message.category}</span>
+                        </div>
+                        <div class="flex items-center">
+                            <button class="text-apple-gray hover:text-game-pink mr-4">
+                                <i class="fas fa-heart mr-1"></i>${message.likes}
+                            </button>
+                            <button class="reply-btn text-game-purple text-sm font-medium" data-id="${message.id}">
+                                <i class="fas fa-reply mr-1"></i>Reply
+                            </button>
+                        </div>
+                    </div>
+                    <div class="message-content mb-4 text-lg">${censorText(message.content)}</div>
+                    <div class="reply-form" id="replyForm-${message.id}">
+                        <textarea placeholder="Write your reply..." class="w-full p-3 border border-apple-light-gray rounded-lg mb-2" rows="2"></textarea>
+                        <div class="flex justify-end space-x-2">
+                            <button class="cancel-reply px-4 py-2 text-apple-gray rounded-lg" data-id="${message.id}">Cancel</button>
+                            <button class="submit-reply px-4 py-2 bg-game-purple text-white rounded-lg" data-id="${message.id}">Post Reply</button>
+                        </div>
+                    </div>
+                    <div class="replies-container mt-4 ml-8 space-y-4" id="replies-${message.id}"></div>
+                `;
+                
+                messagesList.appendChild(messageEl);
+                
+                // Render replies
+                const repliesContainer = document.getElementById(`replies-${message.id}`);
+                if (message.replies && message.replies.length > 0) {
+                    message.replies.forEach(reply => {
+                        const replyEl = document.createElement('div');
+                        replyEl.className = 'forum-message p-4 bg-apple-bg rounded-lg';
+                        replyEl.innerHTML = `
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">${reply.userName || 'Anonymous'}</span>
+                                <span class="text-apple-gray text-sm">${reply.timestamp}</span>
+                            </div>
+                            <div class="flex justify-end">
+                                <button class="text-apple-gray hover:text-game-pink text-sm">
+                                    <i class="fas fa-heart mr-1"></i>${reply.likes}
+                                </button>
+                            </div>
+                            <div class="message-content mt-2">${censorText(reply.content)}</div>
+                        `;
+                        repliesContainer.appendChild(replyEl);
+                    });
+                }
+            });
+            
+            // Update view more button
+            if (messages.length > limit) {
+                viewMoreBtn.textContent = `View More (${messages.length - limit} hidden)`;
+                viewMoreBtn.onclick = () => renderMessages(messages.length);
+            } else {
+                viewMoreBtn.textContent = "All messages displayed";
+                viewMoreBtn.disabled = true;
+                viewMoreBtn.classList.remove('border-game-purple', 'hover:bg-game-purple');
+                viewMoreBtn.classList.add('bg-gray-200', 'text-gray-500', 'cursor-not-allowed');
+            }
+            
+            // Add event listeners to reply buttons
+            document.querySelectorAll('.reply-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const messageId = this.getAttribute('data-id');
+                    const replyForm = document.getElementById(`replyForm-${messageId}`);
+                    replyForm.classList.toggle('active');
+                });
+            });
+            
+            // Add event listeners to cancel buttons
+            document.querySelectorAll('.cancel-reply').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const messageId = this.getAttribute('data-id');
+                    const replyForm = document.getElementById(`replyForm-${messageId}`);
+                    replyForm.classList.remove('active');
+                    replyForm.querySelector('textarea').value = '';
+                });
+            });
+            
+            // Add event listeners to submit reply buttons
+            document.querySelectorAll('.submit-reply').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const messageId = this.getAttribute('data-id');
+                    const replyForm = document.getElementById(`replyForm-${messageId}`);
+                    const textarea = replyForm.querySelector('textarea');
+                    const content = textarea.value.trim();
+                    
+                    if (content) {
+                        // Create new reply
+                        const newReply = {
+                            id: Date.now(),
+                            userName: document.getElementById('userName').value || undefined,
+                            content: content,
+                            timestamp: 'Just now',
+                            likes: 0
+                        };
+                        
+                        // Add reply to message
+                        const message = messages.find(m => m.id == messageId);
+                        if (message) {
+                            if (!message.replies) message.replies = [];
+                            message.replies.push(newReply);
+                            renderMessages(limit);
+                        }
+                        
+                        // Reset form
+                        textarea.value = '';
+                        replyForm.classList.remove('active');
+                    }
+                });
+            });
+        }
+        
+        // Post new message
+        postMessageBtn.addEventListener('click', function() {
+            const userName = document.getElementById('userName').value;
+            const content = document.getElementById('messageContent').value.trim();
+            
             if (content) {
-                // Create new comment
-                const newComment = {
-                    id: comments.length + 1,
-                    name: 'Anonymous',
-                    content: filterBadWords(content),
-                    time: 'Just now',
+                // Create new message
+                const newMessage = {
+                    id: Date.now(),
+                    userName: userName || undefined,
+                    content: content,
+                    timestamp: 'Just now',
+                    likes: 0,
+                    category: 'General Discussion',
                     replies: []
                 };
                 
-                // Add to the beginning of comments array
-                comments.unshift(newComment);
+                // Add to beginning of messages array
+                messages.unshift(newMessage);
                 
-                // Clear input and re-render comments
-                commentInput.value = '';
-                renderComments();
-            }
-        });
-        
-        // Reply button event delegation
-        commentsContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('reply-btn')) {
-                const commentId = parseInt(e.target.getAttribute('data-id'));
-                const replyForm = document.getElementById(`reply-form-${commentId}`);
-                replyForm.classList.toggle('hidden');
-            }
-            
-            if (e.target.classList.contains('cancel-reply')) {
-                const commentId = parseInt(e.target.getAttribute('data-id'));
-                const replyForm = document.getElementById(`reply-form-${commentId}`);
-                replyForm.classList.add('hidden');
-            }
-            
-            if (e.target.classList.contains('submit-reply')) {
-                const commentId = parseInt(e.target.getAttribute('data-id'));
-                const replyForm = document.getElementById(`reply-form-${commentId}`);
-                const textarea = replyForm.querySelector('textarea');
-                const content = textarea.value.trim();
+                // Clear form
+                document.getElementById('messageContent').value = '';
+                if (userName) document.getElementById('userName').value = '';
                 
-                if (content) {
-                    // Find the comment
-                    const comment = comments.find(c => c.id === commentId);
-                    if (comment) {
-                        // Add reply
-                        comment.replies.push({
-                            id: comment.replies.length + 1,
-                            name: 'Anonymous',
-                            content: filterBadWords(content),
-                            time: 'Just now'
-                        });
-                        
-                        // Clear and hide form
-                        textarea.value = '';
-                        replyForm.classList.add('hidden');
-                        
-                        // Re-render comments to show the new reply
-                        renderComments();
-                    }
-                }
+                // Re-render messages
+                renderMessages(3);
+                
+                // Scroll to new message
+                messagesList.firstChild.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                alert('Please enter a message');
             }
         });
         
-        // Load more comments
-        loadMoreBtn.addEventListener('click', () => {
-            // Show all comments
-            commentsContainer.innerHTML = '';
-            comments.forEach(comment => {
-                const commentElement = createCommentElement(comment);
-                commentsContainer.appendChild(commentElement);
-            });
-            loadMoreBtn.style.display = 'none';
-        });
+        // Initial render
+        renderMessages(3);
         
-        // Initialize
-        document.addEventListener('DOMContentLoaded', renderComments);
-        
-        // Fullscreen button functionality
-        const fullscreenBtn = document.querySelector('button:contains("Fullscreen")');
-        if (fullscreenBtn) {
-            fullscreenBtn.addEventListener('click', () => {
-                const iframe = document.querySelector('iframe');
-                if (iframe.requestFullscreen) {
-                    iframe.requestFullscreen();
-                } else if (iframe.webkitRequestFullscreen) {
-                    iframe.webkitRequestFullscreen();
-                } else if (iframe.msRequestFullscreen) {
-                    iframe.msRequestFullscreen();
-                }
-            });
+        // Fullscreen function
+        function openFullscreen() {
+            const elem = document.querySelector('.game-iframe');
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
         }
     </script>
 </body>
